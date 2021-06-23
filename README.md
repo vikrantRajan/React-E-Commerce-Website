@@ -31,8 +31,11 @@ yarn dev (or npm run dev)
 ## API Spec
 
 There's 3 endpoints available on the API:
+
 1. `/api/username`: returns current system username; 
+
 2. `/api/products`: returns list of products; uses query parameters to expose the 3 filters available, `category`, `size` and `color`
+
 3. `/api/products/:productId`: returns detailed information for the product with the specified `productId`
 
 ## Acceptance Criteria
@@ -41,15 +44,15 @@ Below is a list of user stories corresponding to our acceptance criteria.
 
 1. I can browse a list of all products available in the store.
 
-2. I can filter the products list using Category, Size and Color filters that leverage the API to filter the collection
+2. I can filter the products list using Category, Size and Color filters that leverage the API to filter the collection.
 
 3. I can sort the products by price even though the API doesn't provide that functionality.
 
-4. Clicking on a product takes me to a Product Detail Page (PDP) with all the info and images for the product
+4. Clicking on a product takes me to a Product Detail Page (PDP) with all the info and images for the product.
 
-5. I can add a product to cart, which is stored locally on my browser.
+5. I can add a product currently in stock to cart, which is stored locally on my browser.
 
-6. I can view products currently in my cart with quantities and price 
+6. I can view products currently in my cart with quantities and price.
 
 ## Going Above and Beyond the Requirements
 

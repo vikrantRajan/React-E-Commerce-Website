@@ -2,7 +2,7 @@
 
 💫 Welcome to the JIBE FE take-home coding exercise! 🎉
 
-This front-end exercise is designed to take about 4 hours for someone familiar with React/Node/Express. It involves building a store front in React that also makes a couple of requests to the Node.js/Express.js backend.
+This front-end exercise is designed to take about 4 hours for someone familiar with React/Node/Express. It involves building a storefront in React that also makes a couple of requests to the Node.js/Express.js backend.
 
 ## Getting Set Up
 

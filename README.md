@@ -4,6 +4,8 @@
 
 This front-end exercise is designed to take about 4 hours for someone familiar with React/Node/Express. It involves building a storefront in React that also makes a couple of requests to the Node.js/Express.js backend.
 
+If you're finding that it's taking you longer than 4h to complete then please add a note with how you would approach any outstanding requirements you haven't been able to get to. 
+
 ## Getting Set Up
 
 The exercise requires [Node.js](https://nodejs.org/en/) to be installed. We recommend using the LTS version.

@@ -1,7 +1,6 @@
 
 import {
   EuiButton,
-
   EuiCard,
   EuiFlexGrid,
   EuiFlexItem,
@@ -23,7 +22,6 @@ const Home = () => {
   const { GlobalState, dispatch } = useContext(GlobalStateContext);
   const [currentData, setCurrentData] = useState({ data: null, isPending: true, error: null });
   const { data, isPending, error } = useFetch('/api/products');
-  const newData = data;
 
   useEffect(() => {
     dispatch({ type: 'TOGGLE_CART', showCart: false });
@@ -31,8 +29,8 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    setCurrentData({ data: newData, isPending, error });
-    dispatch({ type: 'UPDATE_ALL_PRODUCTS', allProducts: newData });
+    setCurrentData({ data, isPending, error });
+    dispatch({ type: 'UPDATE_ALL_PRODUCTS', allProducts: data });
   }, [data]);
 
   useEffect(() => {

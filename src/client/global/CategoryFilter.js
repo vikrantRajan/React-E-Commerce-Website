@@ -1,8 +1,6 @@
 
 import {
-
   EuiContextMenuItem,
-
   EuiSwitch
 } from '@elastic/eui';
 import _ from 'lodash';
@@ -13,11 +11,7 @@ const CategoryFilter = () => {
   const { GlobalState, dispatch } = useContext(GlobalStateContext);
   const [categories, setCategories] = useState([<EuiContextMenuItem key="copy" icon="pencil">Fetching Data</EuiContextMenuItem>]);
   let allMenuItems = [];
-
-
   const toggleCategory = (event, type, name) => {
-    // console.log(event, type, name);
-
     allMenuItems = [];
     setCategories(allMenuItems);
     const curCategories = GlobalState.filters.category;
@@ -48,12 +42,10 @@ const CategoryFilter = () => {
   useEffect(() => {
     if (GlobalState.allProducts && GlobalState.allProducts.length > 0) {
       const allCategories = [];
-      // setCategories([]);
       GlobalState.allProducts.forEach((x) => {
         x.categories.forEach((category) => {
           const check = _.find(allCategories, o => o.name === category);
           if (!check) {
-            // console.log(allCategories);
             allCategories.push({
               id: allCategories.length, name: category, checked: true
             });
@@ -81,7 +73,6 @@ const CategoryFilter = () => {
 
   // UPDATE UI WHEN FILTER STATE CHANGES
   useEffect(() => {
-    // console.log('CATEGORY FILTER USEEFFECT');
     allMenuItems = [];
 
     setCategories(allMenuItems);

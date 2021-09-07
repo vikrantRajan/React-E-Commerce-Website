@@ -4,7 +4,6 @@ import {
   EuiButtonIcon, EuiFieldSearch,
   EuiHeader,
   EuiHeaderSectionItemButton, EuiIcon,
-
   EuiPopover
 } from '@elastic/eui';
 import React, { useContext, useEffect, useState } from 'react';
@@ -20,8 +19,8 @@ export default () => {
   const { GlobalState, dispatch } = useContext(GlobalStateContext);
   const [navSearch, setNavSearch] = useState('');
   const location = useLocation();
-  document.body.classList.add('euiBody--headerIsFixed--double');
   const [isPopoverOpen, setPopover] = useState(false);
+  document.body.classList.add('euiBody--headerIsFixed--double');
 
   const openCategoryPopover = () => {
     setPopover(!isPopoverOpen);

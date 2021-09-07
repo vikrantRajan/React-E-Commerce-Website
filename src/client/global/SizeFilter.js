@@ -9,8 +9,6 @@ const SizeFilter = () => {
   let allMenuItems = [];
 
   const toggleSize = (event, type, name) => {
-    // console.log(event, type, name);
-
     allMenuItems = [];
     setSizes(allMenuItems);
     const curSizes = GlobalState.filters.size;
@@ -42,12 +40,10 @@ const SizeFilter = () => {
   useEffect(() => {
     if (GlobalState.allProducts && GlobalState.allProducts.length > 0) {
       const allSizes = [];
-      // setSizes([]);
       GlobalState.allProducts.forEach((x) => {
         x.sizes.forEach((size) => {
           const check = _.find(allSizes, o => o.name === size);
           if (!check) {
-            // console.log(allSizes);
             allSizes.push({
               id: allSizes.length, name: size, checked: true
             });

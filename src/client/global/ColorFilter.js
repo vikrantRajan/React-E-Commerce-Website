@@ -10,8 +10,6 @@ const ColorFilter = () => {
   let allMenuItems = [];
 
   const toggleColor = (event, type, name) => {
-    // console.log(event, type, name);
-
     allMenuItems = [];
     setColors(allMenuItems);
     const curColors = GlobalState.filters.color;

@@ -14,7 +14,7 @@ const CartButton = ({ item }) => {
   const { GlobalState, dispatch } = useContext(GlobalStateContext);
   const [toasts, setToasts] = useState([]);
   const incomingItem = item;
-  // FUNCTIONS
+
   const removeToast = () => {
     setToasts([]);
   };

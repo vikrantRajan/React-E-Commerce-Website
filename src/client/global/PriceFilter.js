@@ -2,7 +2,6 @@ import { EuiDualRange, htmlIdGenerator } from '@elastic/eui';
 import React, { useContext, useEffect, useState } from 'react';
 import { GlobalStateContext } from '../contexts/GlobalStateContext';
 
-
 const PriceFilter = () => {
   const [dualValue, setDualValue] = useState([0, 5000]);
   const { GlobalState, dispatch } = useContext(GlobalStateContext);

@@ -20,15 +20,13 @@ export default () => {
   let emptyCart;
   let checkoutButton;
   let clearCartButton;
-  // CONTEXT
   const { GlobalState, dispatch } = useContext(GlobalStateContext);
   const [totalPrice, setTotalPrice] = useState(null);
-  // STATE
   const [isPopoverOpen, setisPopoverOpen] = useState(false);
   const openClearCartPopOver = () => setisPopoverOpen(true);
   const closePopover = () => setisPopoverOpen(false);
   const [toasts, setToasts] = useState([]);
-  // FUNCTIONS
+
   const removeToast = () => {
     setToasts([]);
   };
@@ -49,7 +47,6 @@ export default () => {
     dispatch({ type: 'REMOVE_ALL_CART', item: false });
     closePopover();
   };
-
 
   const closeFlyout = () => dispatch({ type: 'TOGGLE_CART', showCart: false });
   if (GlobalState.cart.length === 0 || !GlobalState.cart) {

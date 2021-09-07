@@ -11,12 +11,10 @@ import { GlobalStateContext } from '../../contexts/GlobalStateContext';
 import Cart from '../../global/Cart';
 import CartButton from '../../global/CartButton';
 import useFetch from '../../hooks/useFetch';
-// import './ProductDetails.css';
 
 const ProductDetails = () => {
   const { id } = useParams();
   const { GlobalState, dispatch } = useContext(GlobalStateContext);
-  // const { productDetailsDispatch } = useContext(ProductDetailsContext);
   let carouselImgCount = 0;
   let categoriesCount = 0;
   let sizesCount = 0;
@@ -25,7 +23,6 @@ const ProductDetails = () => {
   const { data, isPending, error } = useFetch(`/api/products/${id}`);
   useEffect(() => {
     dispatch({ type: 'TOGGLE_CART', showCart: false });
-    // if (!isPending && !error && data) productDetailsDispatch({ type: 'ADD_PRODUCT_DETAILS', productDetails: data });
   }, []);
   return (
     <div className="productDetails">

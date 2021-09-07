@@ -1,19 +1,18 @@
 import _ from 'lodash';
 
 export const GlobalStateReducer = (state, action) => {
-  // console.log('GLOBAL STATE', action, state);
   let newArray = [];
   let curFilters;
   let currentMaxPrice = 0;
   switch (action.type) {
-    // SEARCH
-    case 'SEARCH':
+    // FILTERS
+    case 'UPDATE_FILTER_CATEGORY':
       return {
         showCart: state.showCart || false,
         currentProductDetails: state.currentProductDetails || null,
-        search: action.search || '',
+        search: state.search || '',
         filters: {
-          category: state.filters.category || [],
+          category: action.category || [],
           price: {
             min: state.filters.price.min || 0,
             max: state.filters.price.max || 0,
@@ -25,14 +24,13 @@ export const GlobalStateReducer = (state, action) => {
         cart: state.cart || [],
         allProducts: state.allProducts || [],
       };
-    // FILTERS
-    case 'UPDATE_FILTER_CATEGORY':
+    case 'SEARCH':
       return {
         showCart: state.showCart || false,
         currentProductDetails: state.currentProductDetails || null,
-        search: state.search || '',
+        search: action.search || '',
         filters: {
-          category: action.category || [],
+          category: state.filters.category || [],
           price: {
             min: state.filters.price.min || 0,
             max: state.filters.price.max || 0,

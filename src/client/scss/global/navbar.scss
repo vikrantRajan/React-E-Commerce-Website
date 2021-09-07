@@ -1,0 +1,131 @@
+.navbar {
+    .searchBar {
+        height: auto;
+        width: auto;
+    }
+    .goBack {
+        font-family: $headline;
+        font-weight: black;
+        text-transform: uppercase;
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+        &:hover {
+            letter-spacing: 2px;
+        }
+    }
+
+}
+#categoryFilter {
+    margin: 0 10px 0 0;
+}
+#filterPopover {
+    height: 200px;
+    width: 100%;
+    .filterHeader {
+        padding: 50px;
+        width: 100%;
+        h4 {
+            text-align: left;
+            // height: 100px;
+            width: 80%;
+            float: left;
+            .results {
+                padding: 10px 0 0 0;
+                border-bottom: 5px solid black;
+            }
+        }
+        .closeBTN {
+            background-color: black;
+            color: white;
+            width: 20%;
+            float: left;
+            margin: -6px 0 0 0;
+        }
+        .resetBTN {
+            background-color: $primary;
+            color: black;
+            width: 100%;
+            // float: right;
+            margin: 50px 0 0 0;
+        }
+        @include mq-sp {
+            h4 {
+                width: 100%;
+                float: none;
+                padding: 0 0 20px 0;
+            }
+            .closeBTN {
+                width: 100%;
+                float: none;
+                margin: 0 0 20px 0;
+            }
+            .resetBTN {
+                width: 100%;
+                float: none;
+                margin: 0;
+            }
+        }
+
+    }
+    // padding: 200px;
+    .filterOption {
+        h5 {
+            padding: 20px 0;
+            
+        }
+        padding: 50px;
+        width: 33.33%;
+        float: left;
+        text-align: left;
+
+        @include mq-sp {
+            padding: 10px;
+            // width: 100%;
+            // float: none;
+        }
+
+    }
+    .category {
+        .categoryFilterBTN {
+            width: 100%;
+            padding: 5px 0;
+            // color: greenyellow;
+        }
+    }
+
+    .size {
+        .sizeFilterBTN {
+            width: 100%;
+            padding: 5px 0;
+        }
+    }
+
+    .color {
+        min-height: 100%;
+
+        .colorFilterBTN {
+            width: 100%;
+            padding: 5px 0;
+        }
+    }
+
+    .price {
+        background-color: $greyOne;
+        width: 100%;
+        padding: 0 0 20px 0;
+        h5 {
+            padding: 20px 0;
+        }
+        .priceSlider {
+            margin: 0 auto;
+        }
+    }
+
+}
+
+// .euiPanel {
+//     // position: fixed;
+// }

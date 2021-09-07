@@ -1,0 +1,31 @@
+@mixin mq-sp($max: $sp-max-width) {
+  @media only screen and (max-width: #{$max}) {
+    @content;
+  }
+}
+@mixin mq-tb($max: $tb-max-width) {
+  @media only screen and (max-width: #{$max}) {
+    @content;
+  }
+}
+@mixin mq-pc($max: $pc-max-width) {
+  @media only screen and (max-width: #{$max}) {
+    @content;
+  }
+}
+
+@mixin mq-pc-md($max: $pc-md-max-width) {
+  @media only screen and (max-width: #{$max}) {
+    @content;
+  }
+}
+@mixin mq-pc-lg($max: $pc-lg-max-width) {
+  @media only screen and (max-width: #{$max}) {
+    @content;
+  }
+}
+@mixin mq-pc-xl($min: $pc-xl-min-width) {
+  @media only screen and (min-width: #{$min}) {
+    @content;
+  }
+}

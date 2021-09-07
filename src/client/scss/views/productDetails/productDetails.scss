@@ -1,0 +1,61 @@
+.productDetails {
+    padding: 100px 0 0 0;
+    .productDetailsCarousel {
+        width: 70%;
+        float: left;
+        .carousel-slider {
+            .slide {
+                .thumbnailCarousel {
+    
+                    display: none;
+                
+            }
+            }
+        }
+    }
+    .textContainer {
+        width: 30%;
+        float: left;
+        text-align: left;
+        padding: 5%;
+        .title {
+            font-size: 28px;
+        }
+        .price {
+            padding: 0 0 20px 0;
+            font-size: 22px;
+        }
+        .sizes {
+            width: 100%;
+            padding: 20px 0;
+            .sizeIcon {
+
+                margin: 0 10px 0 0;
+            }
+        
+        }
+        h4:last-of-type {
+            padding: 0 0 20px 0;
+        }
+        
+    }
+}
+
+
+/* IPAD */
+@include mq-tb {
+    .productDetails {
+        .productDetailsCarousel {
+            width: 100%;
+            float: none;
+        }
+        .textContainer {
+            width: 100%;
+            float: none;
+            text-align: left;
+            padding: 5%;
+        }
+    }
+    
+    
+}

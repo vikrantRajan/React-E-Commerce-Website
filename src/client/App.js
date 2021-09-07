@@ -1,44 +1,36 @@
-import React, { Component } from 'react';
-import './app.css';
 import {
-  EuiPageTemplate,
-  EuiEmptyPrompt,
-  EuiText
+  EuiPage,
+  EuiPageBody
 } from '@elastic/eui';
-import JIBELogo from './jibe-logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import GlobalStateContextProvider from './contexts/GlobalStateContext';
+import Navbar from './global/Navbar';
+import './scss/app.scss';
+import Home from './views/Home/Home';
+import NotFound from './views/NotFound/NotFound';
+import ProductDetails from './views/ProductDetails/ProductDetails';
 
-export default class App extends Component {
-  state = { username: null };
 
-  componentDidMount() {
-    fetch('/api/username')
-      .then(res => res.json())
-      .then(user => this.setState({ username: user.username }));
-  }
-
-  render() {
-    const { username } = this.state;
-    const title = (
-      <EuiText>
-        {username ? <h1>{`Hi ${username}, let's `}</h1> : <h1>Loading.. please wait!</h1>}
-      </EuiText>
-    );
-    const content = (
-      <img src={JIBELogo} alt="jibe" />
-    );
-    return (
-      <div>
-        <EuiPageTemplate
-          template="centeredBody"
-          pageContentProps={{ paddingSize: 'none' }}
-        >
-          <EuiEmptyPrompt
-            title={title}
-            body={content}
-          />
-        </EuiPageTemplate>
-
+const App = () => (
+  <div>
+    <Router>
+      <div className="App">
+        <GlobalStateContextProvider>
+          <EuiPage paddingSize="none">
+            <EuiPageBody panelled>
+              <Navbar />
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/productdetails/:id" component={ProductDetails} />
+                <Route path="*" component={NotFound} />
+              </Switch>
+            </EuiPageBody>
+          </EuiPage>
+        </GlobalStateContextProvider>
       </div>
-    );
-  }
-}
+    </Router>
+  </div>
+);
+
+export default App;

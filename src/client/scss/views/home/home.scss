@@ -1,0 +1,118 @@
+.home {
+    .productImage {
+        background-repeat: 'no-repeat';
+        background-size: 'cover';
+        min-height: '200px';
+    }
+
+    .videoBanner {
+        width: 100%;
+        height: auto;
+        padding: 0 0 100px 0;
+        position: relative;
+        z-index: 99;
+        .videoBannerText {
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            text-align: left;
+            color: white;;
+            z-index: 999;
+            font-size: 56px;
+            line-height: 50px;
+            .videoBannerP {
+                font-size: 14px;
+                font-weight: normal;
+                line-height: 20px;
+            }
+            .firstLine {
+                margin: 25px 0 0 0;
+            }
+            #bannerBTN {
+                background: none;
+                border: 2px solid;
+                color: honeydew;
+                position: relative;
+                backdrop-filter: blur(10px);
+                transition: all 0.4s ease;
+                text-transform: uppercase;
+                font-weight: 900;
+            
+                animation-name: bannerButtonTwo;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                &:hover {
+                    text-decoration: none;
+                    letter-spacing: 3px;
+                }
+
+                span {
+                    svg {
+                        position: absolute;
+                        top: 80px;
+                        animation-name: bannerButton;
+                        animation-duration: 5s;
+                        animation-iteration-count: infinite;
+                    }
+                }
+                
+            }
+
+        }
+    }
+
+    #productGrid {
+        padding: 25px;
+        .productCard {
+            .price {
+                h4 {
+                    padding: 0 0 50px 0;
+                    margin: 0;
+                    color: gray;
+                }
+            }
+            .absoluteBottom {
+                width: 100%;
+                position: relative;
+                .b {
+                    float: left;
+                    width: 100%;
+                    text-decoration: none;
+                    a {
+                        button {
+                            float: left;
+                            width: 100%;
+                            text-decoration: none;
+                        }
+                    }
+                    .viewDetailsButton {
+                        margin: 10px 0 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .noProductsFound {
+        padding: 0  0 200px 0;
+        h1 {
+            padding: 0 0 20px 0;
+        }
+    }
+}
+
+.blue {
+    color: rgb(0, 183, 255);
+}
+
+@keyframes bannerButton {
+    0% { color: black; transform: scale(1); top: 30px; }
+    50% { color: greenyellow; transform: scale(3); top: 120px;}
+    100% { color: rgba(0, 0, 0, 0); transform: scale(3); top: 160px;}
+}
+
+@keyframes bannerButtonTwo {
+    0% { color: black; background-color: greenyellow; }
+    50% { color: greenyellow; }
+    100% { color: rgba(172, 255, 47, 0.747);}
+}

@@ -1,0 +1,55 @@
+.productDetails {
+    padding: 100px 0 0 0;
+}
+.productDetails .productDetailsCarousel {
+    width: 70%;
+    float: left;
+}
+.productDetails .textContainer {
+    width: 30%;
+    float: left;
+    text-align: left;
+    padding: 5%;
+}
+
+.productDetails .textContainer .title {
+    font-size: 28px;
+}
+.productDetails .textContainer .price {
+    padding: 0 0 20px 0;
+    font-size: 22px;
+}
+
+.productDetails .textContainer .sizes {
+    width: 100%;
+    padding: 20px 0;
+
+}
+
+.productDetails .textContainer h4:last-of-type {
+    padding: 0 0 20px 0;
+}
+
+.productDetails .textContainer .sizes .sizeIcon {
+
+    margin: 0 10px 0 0;
+}
+.productDetails .productDetailsCarousel .carousel-slider .slide .thumbnailCarousel {
+    
+        display: none;
+    
+}
+/* IPAD */
+@media only screen and (max-width: 768px) {
+    .productDetails .productDetailsCarousel {
+        width: 100%;
+        float: none;
+    }
+    .productDetails .textContainer {
+        width: 100%;
+        float: none;
+        text-align: left;
+        padding: 5%;
+    }
+    
+}

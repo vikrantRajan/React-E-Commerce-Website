@@ -1,0 +1,13 @@
+.loadingContainer {
+    margin: 300px 0;
+    height: auto;
+    .loadingBar {
+      
+      height: 70px;
+      width: 100%;
+       span {
+        
+        width: 20px;
+      }
+    }
+  }

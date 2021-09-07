@@ -1,0 +1,30 @@
+// break points
+$sp-max-width: 520px; // between 0 - 520px
+$tb-max-width: 1100px; // between 440 - 1100px
+$pc-max-width: 1440px; // between 1100 - 1440px
+$pc-md-max-width: 1720px; // between 1440 - 1720px
+$pc-lg-max-width: 1920px; // between 1720 - 1920px
+$pc-xl-min-width: 1920px; // for screen sizes above 1920px
+
+$primary: greenyellow;
+$secondary: rgb(0, 183, 255);
+$yellowTwo: #fff9e8;
+$yellowThree: #fff0c4;
+
+
+
+$white: #ffffff;
+
+$greyOne: #f4f4f4;
+$greyTwo: #b4b4b4;
+$greyThree: #8d8d8d;
+$greyFour: #707070;
+
+$dark: #443f3d;
+
+$positive: #21ba45;
+$negative: #c10015;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+$font: 'Roboto', sans-serif;
+$headline: 'Montserrat', sans-serif;

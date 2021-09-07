@@ -48,16 +48,12 @@ const Home = () => {
     if (data) {
       let noData = false;
       const categoryData = [];
-      let finishedCat = false;
 
       const sizeData = [];
-      let finishedSize = false;
 
       const colorData = [];
-      let finishedColor = false;
 
       const priceData = [];
-      let finishedPrice = false;
 
       const searchData = [];
       let finishedSearch = false;
@@ -80,15 +76,12 @@ const Home = () => {
             }
           });
 
-          if (i === data.length - 1) {
-            finishedCat = true;
-          }
-          if (finishedCat && (categoryData.length <= 0 || !categoryData)) noData = true;
+          if (i === data.length - 1 && (categoryData.length <= 0 || !categoryData)) noData = true;
         });
       }
 
       // SIZE FILTER
-      if (!noData && finishedCat && GlobalState.filters.size) {
+      if (!noData && categoryData && GlobalState.filters.size) {
         categoryData.forEach((x, i) => {
           let done = false;
           GlobalState.filters.size.forEach((size) => {
@@ -105,43 +98,35 @@ const Home = () => {
             }
           });
 
-          if (i === categoryData.length - 1) finishedSize = true;
-          if (finishedSize && (sizeData.length <= 0 || !sizeData)) noData = true;
+          if (i === categoryData.length - 1 && (sizeData.length <= 0 || !sizeData)) noData = true;
         });
       }
 
       // COLOR FILTER
-      if (!noData && finishedCat && finishedSize && GlobalState.filters.color) {
+      if (!noData && sizeData && GlobalState.filters.color) {
         sizeData.forEach((x, i) => {
           let done = false;
           GlobalState.filters.color.forEach((color) => {
-            if (!done) {
-              let check = false;
-              if (color.checked && x.color === color.name) check = true;
-              // const duplicate = _.find(colorData, o => o.id === x.id);
-              if (check) {
-                colorData.push(x);
-                done = true;
-              }
+            if (color.checked && x.color === color.name && !done) {
+              colorData.push(x);
+              done = true;
             }
           });
 
-
-          if (i === sizeData.length - 1) finishedColor = true;
-          if (finishedColor && (colorData.length <= 0 || !colorData)) noData = true;
+          if (i === sizeData.length - 1 && (colorData.length <= 0 || !colorData)) noData = true;
         });
       }
 
 
       // PRICE FILTER
-      if (!noData && finishedCat && finishedSize && finishedColor && GlobalState.filters.price) {
+      if (!noData && colorData && GlobalState.filters.price) {
         colorData.forEach((x, i) => {
           // eslint-disable-next-line no-useless-escape
           const curPrice = parseFloat(Number(x.price.replace(/[^0-9\.-]+/g, '')));
           if (curPrice > GlobalState.filters.price.min
             && curPrice < GlobalState.filters.price.max) priceData.push(x);
-          if (i === sizeData.length - 1) finishedPrice = true;
-          if (finishedPrice && (priceData.length <= 0 || !priceData)) noData = true;
+
+          if (i === sizeData.length - 1 && (priceData.length <= 0 || !priceData)) noData = true;
         });
       }
 

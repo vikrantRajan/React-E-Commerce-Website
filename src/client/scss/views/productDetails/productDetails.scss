@@ -1,5 +1,14 @@
 .productDetails {
     padding: 100px 0 0 0;
+    .fetchFailed {
+        font-family: $headline;
+        font-size: 36px;
+        padding: 0  0 200px 0;
+        h1 {
+            padding: 0 0 20px 0;
+        }
+        
+    }
     .productDetailsCarousel {
         width: 70%;
         float: left;

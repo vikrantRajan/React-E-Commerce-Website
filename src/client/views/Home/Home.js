@@ -174,7 +174,7 @@ const Home = () => {
         {' '}
       </div>
       )}
-      { error && <div>{ error }</div> }
+      { error && <div className="fetchFailed"><h1>{ error }</h1></div> }
       { currentData.data && (
       <EuiPageContent
         hasBorder={false}

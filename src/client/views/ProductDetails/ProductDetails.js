@@ -36,7 +36,7 @@ const ProductDetails = () => {
         {' '}
       </div>
       ) }
-      { error && <div>{ error }</div> }
+      { error && <div className="fetchFailed"><h1>{ error }</h1></div> }
       { data && (
         <EuiPageContent
           hasBorder={false}

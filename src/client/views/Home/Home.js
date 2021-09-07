@@ -23,7 +23,7 @@ const Home = () => {
   const { GlobalState, dispatch } = useContext(GlobalStateContext);
   const [currentData, setCurrentData] = useState({ data: null, isPending: true, error: null });
   const { data, isPending, error } = useFetch('/api/products');
-  let newData = data;
+  const newData = data;
 
   useEffect(() => {
     dispatch({ type: 'TOGGLE_CART', showCart: false });
@@ -58,6 +58,9 @@ const Home = () => {
 
       const priceData = [];
       let finishedPrice = false;
+
+      const searchData = [];
+      let finishedSearch = false;
 
       // CATEGORY FILTER
       if (GlobalState.filters.category) {
@@ -114,51 +117,54 @@ const Home = () => {
           GlobalState.filters.color.forEach((color) => {
             if (!done) {
               let check = false;
-              if (color.checked) {
-                if (x.color === color.name) check = true;
-              }
-              const duplicate = _.find(colorData, o => o.id === x.id);
-              if (check && !duplicate) {
+              if (color.checked && x.color === color.name) check = true;
+              // const duplicate = _.find(colorData, o => o.id === x.id);
+              if (check) {
                 colorData.push(x);
                 done = true;
               }
             }
           });
 
+
           if (i === sizeData.length - 1) finishedColor = true;
           if (finishedColor && (colorData.length <= 0 || !colorData)) noData = true;
         });
       }
+
 
       // PRICE FILTER
       if (!noData && finishedCat && finishedSize && finishedColor && GlobalState.filters.price) {
         colorData.forEach((x, i) => {
           // eslint-disable-next-line no-useless-escape
           const curPrice = parseFloat(Number(x.price.replace(/[^0-9\.-]+/g, '')));
-          if (curPrice > GlobalState.filters.price.min && curPrice < GlobalState.filters.price.max) priceData.push(x);
+          if (curPrice > GlobalState.filters.price.min
+            && curPrice < GlobalState.filters.price.max) priceData.push(x);
           if (i === sizeData.length - 1) finishedPrice = true;
           if (finishedPrice && (priceData.length <= 0 || !priceData)) noData = true;
         });
       }
 
       // SEARCH FILTER
-      if (!noData && finishedSize && finishedCat && finishedColor && finishedPrice) {
-        const searchData = [];
-        priceData.forEach((x) => {
+      if (!noData && priceData) {
+        priceData.forEach((x, i) => {
           if (
             x.title.toLowerCase().includes(GlobalState.search.toLowerCase())
-            || x.price.toLowerCase().includes(GlobalState.search.toLowerCase())
-            || x.color.toLowerCase().includes(GlobalState.search.toLowerCase())
-          ) searchData.push(x);
+          ) {
+            searchData.push(x);
+          }
+
+          if (i === priceData.length - 1) finishedSearch = true;
         });
+      }
+
+      if (searchData && finishedSearch) {
         setCurrentData({ data: searchData, isPending: false, error: null });
-        newData = [];
       }
 
       if (noData) setCurrentData({ data: [], isPending: false, error: null });
     }
   }, [GlobalState.filters]);
-
 
 
   let c = 0;

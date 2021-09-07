@@ -56,9 +56,8 @@ const CartButton = ({ item }) => {
       dispatch({ type: 'ADD_ITEM_CART', newItem });
       showSuccessCartNotification(`Added ${e.title} To Cart`);
     }
-    // console.log(GlobalState.cart);
+
     dispatch({ type: 'TOGGLE_CART', showCart: true });
-    console.log('clicked add to cart', GlobalState.cart, existingCartItem);
   };
 
   const removeFromCart = ({ id }) => {

@@ -1,7 +1,6 @@
 import _ from 'lodash';
 
 export const GlobalStateReducer = (state, action) => {
-  console.log('GLOBAL STATE REDUCER ==> ', action, state);
   let newArray = [];
   let curFilters;
   let currentMaxPrice = 0;

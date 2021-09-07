@@ -151,8 +151,6 @@ const Home = () => {
             || x.color.toLowerCase().includes(GlobalState.search.toLowerCase())
           ) searchData.push(x);
         });
-
-        // console.log(colorData);
         setCurrentData({ data: searchData, isPending: false, error: null });
         newData = [];
       }
